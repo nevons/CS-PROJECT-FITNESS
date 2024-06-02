@@ -7,10 +7,10 @@ mycursor=mydb.cursor()
 mycursor.execute("show databases;")
 db_ls=mycursor.fetchall()
 print(db_ls)
-'''
 try:
-    if "nutripal_user_db" not in db_ls:
+    if ('nutripal_user_db',) not in db_ls:
         mycursor.execute("create database nutripal_user_db;")
+        mycursor.execute("use nutripal_user_db;")
     else:
         mycursor.execute("use nutripal_user_db;")
 except:
@@ -32,6 +32,5 @@ if c1==2:
     acc_age=int(input("Enter your age: "))
     acc_code=acc_code_maker()
     mycursor.execute("create table user_%s () ")
-'''
 
 mydb.close()
