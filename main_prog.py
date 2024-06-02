@@ -8,11 +8,11 @@ mycursor.execute("show databases;")
 db_ls=mycursor.fetchall()
 print(db_ls)
 try:
-    if ('nutripal_user_db',) not in db_ls:
-        mycursor.execute("create database nutripal_user_db;")
-        mycursor.execute("use nutripal_user_db;")
+    if ('nutripal_db',) not in db_ls:
+        mycursor.execute("create database nutripal_db;")
+        mycursor.execute("use nutripal_db;")
     else:
-        mycursor.execute("use nutripal_user_db;")
+        mycursor.execute("use nutripal_db;")
 except:
     print("Oops! An error occured...")
 
