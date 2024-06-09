@@ -1,4 +1,7 @@
 import mysql.connector as m
+import pyautogui
+import openai
+import webbrowser
 
 #db config
 mydb=m.connect(passwd="heilhitler666",host="localhost",user="root",auth_plugin="mysql_native_password")
@@ -34,3 +37,11 @@ if c1==2:
     mycursor.execute("create table user_%s () ")
 
 mydb.close()
+
+#key maker for openai
+conf=input('Do you have an OpenAi account(y/n)?: ')
+if conf=='y'or'Y':
+    conf_1=input('Do you have an API key(y/n)?: ')
+    if conf_1=='n'or'N':
+        print('Having an API key is essential to ')
+        webbrowser.open('https://platform.openai.com/login')
