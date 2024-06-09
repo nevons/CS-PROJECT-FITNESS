@@ -19,14 +19,38 @@ except:
     print("Oops! An error occured...")
 
 #key maker for openai
+api_key=''
+
+def api_key_getter():
+    global api_key
+    print('Having an API key is essential to use NutriPal.\n Opening the OpenAI API key maker website..... \nIt may ask you to login.\n After you are done making a key, enter it in the prompt below...')
+    time.sleep(2.5)
+    webbrowser.open('https://platform.openai.com/settings/profile?tab=api-keys')
+    api_key=input('enter your API key: ')
+    return api_key
+
+
 conf=input('Do you have an OpenAi account(y/n)?: ')
 if conf=='y'or'Y':
     conf_1=input('Do you have an API key(y/n)?: ')
+    
     if conf_1=='n'or'N':
-        print('Having an API key is essential to use NutriPal.\n Opening the OpenAI website..... \nIt may ask you to login.\n After you are done making a key, enter it in the prompt below...')
-        time.sleep(2.5)
-        webbrowser.open('https://platform.openai.com/settings/profile?tab=api-keys')
+        api_key=api_key_getter()
+    elif conf_1=='y' or 'Y':
         api_key=input('enter your API key: ')
+    else:
+        print('Invalid input.')
+
+elif conf=='n' or 'N':
+
+    print('Having an OpenAI account is mandatory to use NutriPal.\nRedirecting to OpenAI website...')
+    print('After creating account, come back here.')
+    time.sleep(2)
+    webbrowser.open('https://platform.openai.com/signup')
+
+    time.sleep(10)
+    print('Lastly, you require an OpenAI API key.')
+    api_key=api_key_getter()
 
 #account manager
 print("Log in to existing account or create a new one.....")
