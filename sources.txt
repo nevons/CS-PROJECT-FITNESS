@@ -1,0 +1,16 @@
+Software:
+	Visual Studio Code
+	IDLE
+	GitHub Desktop
+
+Utilities:
+	GitHub
+	OpenAI : ChatGPT, API
+	YouTube
+	Python Documentation
+
+Python Modules:
+	time
+	webbrowser
+	openai
+	customtkinter
