@@ -8,7 +8,6 @@ mycursor=mydb.cursor()
 
 mycursor.execute("show databases;")
 db_ls=mycursor.fetchall()
-print(db_ls)
 try:
     if ('nutripal_db',) not in db_ls:
         mycursor.execute("create database nutripal_db;")
@@ -17,6 +16,14 @@ try:
         mycursor.execute("use nutripal_db;")
 except:
     print("Oops! An error occured...")
+
+mycursor.execute('show tables;')
+tb_ls=mycursor.fetchall()
+
+if ('users',) not in tb_ls:
+    mycursor.execute("create table users (acc_api_key varchar(100) primary key ,acc_name varchar(20) not null ,acc_age int not null);")
+else:
+    pass
 
 #key maker for openai
 api_key=''
@@ -41,8 +48,7 @@ if conf=='y'or'Y':
     else:
         print('Invalid input.')
 
-elif conf=='n' or 'N':
-
+elif conf=='n'or'N':
     print('Having an OpenAI account is mandatory to use NutriPal.\nRedirecting to OpenAI website...')
     print('After creating account, come back here.')
     time.sleep(2)
@@ -51,6 +57,9 @@ elif conf=='n' or 'N':
     time.sleep(10)
     print('Lastly, you require an OpenAI API key.')
     api_key=api_key_getter()
+
+else:
+    print('Invalid input.')
 
 #account manager
 print("Log in to existing account or create a new one.....")
@@ -61,10 +70,6 @@ if c1==2:
     acc_age=int(input("Enter your age: "))
     acc_api_key=api_key
 
-    acc_tuple=tuple(acc_api_key,acc_name,acc_age)
-
-    mycursor.execute("create table user_%s %s ",(acc_name,acc_tuple))
-
-
-
+    mycursor.execute("insert into users values (%s,%s,%s);",(acc_api_key,acc_name,acc_age))
+    mydb.commit()
 mydb.close()
