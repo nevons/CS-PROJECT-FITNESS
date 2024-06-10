@@ -31,6 +31,7 @@ api_key=''
 def api_key_getter():
     global api_key
     print('Having an API key is essential to use NutriPal.\n Opening the OpenAI API key maker website..... \nIt may ask you to login.\n After you are done making a key, enter it in the prompt below...')
+    print('Store your key somewhere as you need it to log in...')
     time.sleep(2.5)
     webbrowser.open('https://platform.openai.com/settings/profile?tab=api-keys')
     api_key=input('enter your API key: ')
@@ -54,7 +55,7 @@ elif conf=='n'or conf=='N':
     time.sleep(2)
     webbrowser.open('https://platform.openai.com/signup')
 
-    time.sleep(10)
+    time.sleep(6)
     print('Lastly, you require an OpenAI API key.')
     api_key=api_key_getter()
 
@@ -62,8 +63,9 @@ else:
     print('Invalid input.')
 
 #account manager
+print('---------ACCOUNTS-----------')
 print("Log in to existing account or create a new one.....")
-c1=int(input("Enter 1:Log in or 2:Create new account: "))
+c1=int(input("Enter 1: Log in or 2: Create new account: "))
 
 if c1==2:
     acc_name=input("Enter your name(no spaces in between): ")
@@ -72,4 +74,22 @@ if c1==2:
 
     mycursor.execute("insert into users values (%s,%s,%s);",(acc_api_key,acc_name,acc_age))
     mydb.commit()
+
+elif c1==1:
+    key_login=input('Enter your API key: ')
+    mycursor.execute("select * from users")
+    us_ls=mycursor.fetchall()
+
+    try:
+        for i in us_ls:
+            if i[0]==key_login:
+                print('Welcome,'+i[1]+'!')
+            else:
+                print('Account not found!')
+
+    except:
+        print('Oops! Something went wrong...')
+
+else:
+    print('Invalid option.')
 mydb.close()
