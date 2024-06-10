@@ -37,18 +37,18 @@ def api_key_getter():
     return api_key
 
 
-conf=input('Do you have an OpenAi account(y/n)?: ')
-if conf=='y'or'Y':
+conf=input('Do you have an OpenAI account(y/n)?: ')
+if conf=='y'or conf=='Y':
     conf_1=input('Do you have an API key(y/n)?: ')
     
-    if conf_1=='n'or'N':
+    if conf_1=='n'or conf_1=='N':
         api_key=api_key_getter()
-    elif conf_1=='y' or 'Y':
+    elif conf_1=='y' or conf_1=='Y':
         api_key=input('enter your API key: ')
     else:
         print('Invalid input.')
 
-elif conf=='n'or'N':
+elif conf=='n'or conf=='N':
     print('Having an OpenAI account is mandatory to use NutriPal.\nRedirecting to OpenAI website...')
     print('After creating account, come back here.')
     time.sleep(2)
