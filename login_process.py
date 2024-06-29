@@ -34,7 +34,6 @@ def api_key_getter():
     api_key=input('enter your API key: ')
     return apikey
 
-
 #account manager
 print('---------ACCOUNTS-----------')
 print("Log in to existing account or create a new one.....")

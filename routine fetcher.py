@@ -1,7 +1,7 @@
 import openai
 response = openai.ChatCompletion.create(
 
-  api_key=apikey,  
+  api_key="",  
   model="gpt-3.5-turbo-1106",
   messages=[
     {

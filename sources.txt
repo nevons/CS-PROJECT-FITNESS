@@ -10,6 +10,7 @@ Utilities:
 	Python Documentation
 
 Python Modules:
+	mysql.connector
 	time
 	webbrowser
 	openai
