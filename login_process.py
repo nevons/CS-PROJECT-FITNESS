@@ -31,7 +31,7 @@ api_key=''
 def api_key_getter():
     global api_key
     print('Having an API key is essential to use NutriPal.\n Opening the OpenAI API key maker website..... \nIt may ask you to login.\n After you are done making a key, enter it in the prompt below...')
-    print('Store your key somewhere as you need it to log in...')
+    print('Store your key in the same folder as NutriPal as you need it to log in...')
     time.sleep(2.5)
     webbrowser.open('https://platform.openai.com/settings/profile?tab=api-keys')
     api_key=input('enter your API key: ')
