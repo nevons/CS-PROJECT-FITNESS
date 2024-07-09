@@ -2,6 +2,8 @@ import mysql.connector as m
 import webbrowser
 import time
 import openai
+import os
+import random
 
 #db config
 mydb=m.connect(passwd="heilhitler666",host="localhost",user="root",auth_plugin="mysql_native_password")
@@ -36,11 +38,12 @@ def api_key_getter():
     return apikey
 
 def ai(prompt):
+    #all code inside this function present on openai's website
     response = openai.ChatCompletion.create(
-
-  api_key=apikey,  
-  model="gpt-3.5-turbo-1106",
-  messages=[
+    text="",
+    api_key=apikey,  
+    model="gpt-3.5-turbo-1106",
+    messages=[
     {
       "role": "system",
       "content": [
@@ -60,19 +63,31 @@ def ai(prompt):
       ]
     }
   ],
-  temperature=1,
-  max_tokens=256,
-  top_p=1,
-  frequency_penalty=0,
-  presence_penalty=0
-)
+    temperature=1,
+    max_tokens=256,
+    top_p=1,
+    frequency_penalty=0,
+    presence_penalty=0
+    )
+    
     try:
-        print(response["choices"][0]["text"])
+        text+=response(["choices"][0]["text"])
     except:
         print("Something went wrong...")
 
+    if not os.path.exists("OpenAI"):
+        os.mkdir("OpenAI")
+    else:
+        pass
+
+    #naming system
+    n=random.randint(1,999999)
+    file_list=os.listdir("OpenAI")
+    with open(f"prompt-{n}.txt","w") as f:
+        f.write(text)
+
 #account manager
-print('---------ACCOUNTS-----------')
+print("---------ACCOUNTS-----------")
 print("Log in to existing account or create a new one.....")
 c1=int(input("Enter 1: Log in or 2: Create new account: "))
 
@@ -127,3 +142,41 @@ elif c1==1:
 else:
     print('Invalid option.')
 mydb.close()
+
+
+
+#query/ routine fetcher
+
+pref=input("What is your body goal: Cut Or Bulk?: ")
+if pref in ["Cut","cut","CUT"]:
+    weight=input("Enter your current weight: ")
+    goal=input("Enter your desired weight: ")
+    wkot_pref=("Would you like a workout plan attached?(y/n): ")
+    if wkot_pref in ["Y","y"]:
+        wkot_pref_2=input("Workout with equipment (a) or Calisthenics programme(b)?(a/b): ")
+        if wkot_pref_2 in ["a","A"]:
+            ai_prompt=f"I want to reduce my weight from {weight} to {goal} in a tangible time period. give me two tables: one for diet and one for exercise using equipment. in the table for food list the food items along with their protein and fat in grams.In exercise, you will give me a time range to exercise along with exercises and the muscle groups they target. Also provide me the amount of reps and sets to do per exercise. these tables have to be prepared as a weekly schedule. also provide the expected amount of time in months and days."
+
+        elif wkot_pref_2 in ["b","B"]:
+            ai_prompt=f"I want to reduce my weight from {weight} to {goal} in a tangible time period. give me two tables: one for diet and one for exercise via a calisthenics program only. in the table for food list the food items along with their protein and fat in grams.In exercise, you will give me a time range to exercise along with exercises and the muscle groups they target. Also provide me the amount of reps and sets to do per exercise. these tables have to be prepared as a weekly schedule. also provide the expected amount of time in months and days."
+
+        else:
+            print("Invalid input")
+
+    elif wkot_pref in ["N","n"]:
+        print("Noted. Proceeding...")
+
+    else:
+        print("Invalid input")
+        
+elif pref in ["Bulk","bulk","BULK"]:
+    weight=input("Enter your current weight: ")
+    goal=input("Enter your desired weight: ")
+    ai_prompt=f"I want to increase my weight from {weight} to {goal} in a tangible time period. give me a table for diet. in the table for food list the food items along with their protein and fat in grams. the table has to be prepared as a weekly schedule. also provide the expected amount of time in months and days."
+
+else:
+    print("Invalid input")
+
+ai(ai_prompt)
+
+
