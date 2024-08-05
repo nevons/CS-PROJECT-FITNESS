@@ -49,8 +49,8 @@ def ai(prompt):
       "content": [
         {
           "type": "text",
-          "text": "you are my fitness coach who will provide me a diet and exercise routine for a week in the form of two tables: diet and exercise. Each of these has days labelled.\nIn diet, you will give me food items to consume per day in the week to achieve my body goals in a tangible time period. You will list the food items along with their protein and fat in grams.\nIn exercise, you will give me a time range to exercise along with exercises and the muscle groups they target. Also provide me the amount of reps and sets to do per exercise."
-        }
+          "text": "you are my fitness coach who will provide me a diet routine for a week in the form of a table. Each of these has days labelled.\nIn diet, you will give me food items to consume per day in the week to achieve my body goals in a tangible time period. You will list the food items along with their protein and fat in grams."
+          }
       ]
     },
     {
@@ -104,6 +104,8 @@ if c1==2:
             apikey=api_key_getter()
         elif conf_1=='y' or conf_1=='Y':
             apikey=input('enter your API key: ')
+            print("Account created successfully! Welcome!...")
+            time.sleep(2)
         else:
             print('Invalid input.')
 
@@ -132,6 +134,7 @@ elif c1==1:
     try:
         for i in us_ls:
             if i[0]==key_login:
+                apikey=key_login
                 print('Welcome,'+i[1]+'!')
             else:
                 print('Account not found!')
@@ -151,28 +154,13 @@ pref=input("What is your body goal: Cut Or Bulk?: ")
 if pref in ["Cut","cut","CUT"]:
     weight=input("Enter your current weight: ")
     goal=input("Enter your desired weight: ")
-    wkot_pref=("Would you like a workout plan attached?(y/n): ")
-    if wkot_pref in ["Y","y"]:
-        wkot_pref_2=input("Workout with equipment (a) or Calisthenics programme(b)?(a/b): ")
-        if wkot_pref_2 in ["a","A"]:
-            ai_prompt=f"I want to reduce my weight from {weight} to {goal} in a tangible time period. give me two tables: one for diet and one for exercise using equipment. in the table for food list the food items along with their protein and fat in grams.In exercise, you will give me a time range to exercise along with exercises and the muscle groups they target. Also provide me the amount of reps and sets to do per exercise. these tables have to be prepared as a weekly schedule. also provide the expected amount of time in months and days."
-
-        elif wkot_pref_2 in ["b","B"]:
-            ai_prompt=f"I want to reduce my weight from {weight} to {goal} in a tangible time period. give me two tables: one for diet and one for exercise via a calisthenics program only. in the table for food list the food items along with their protein and fat in grams.In exercise, you will give me a time range to exercise along with exercises and the muscle groups they target. Also provide me the amount of reps and sets to do per exercise. these tables have to be prepared as a weekly schedule. also provide the expected amount of time in months and days."
-
-        else:
-            print("Invalid input")
-
-    elif wkot_pref in ["N","n"]:
-        print("Noted. Proceeding...")
-
-    else:
-        print("Invalid input")
+    ai_prompt=f"I want to increase my weight from {weight} to {goal} in a tangible time period. give me a table for diet. in the table for food list the food items along with their protein and fat in grams. the table has to be prepared as a weekly schedule. also provide the expected amount of time in months and days. Do not put any text before or after the table, just the table itself."
+    
         
 elif pref in ["Bulk","bulk","BULK"]:
     weight=input("Enter your current weight: ")
     goal=input("Enter your desired weight: ")
-    ai_prompt=f"I want to increase my weight from {weight} to {goal} in a tangible time period. give me a table for diet. in the table for food list the food items along with their protein and fat in grams. the table has to be prepared as a weekly schedule. also provide the expected amount of time in months and days."
+    ai_prompt=f"I want to increase my weight from {weight} to {goal} in a tangible time period. give me a table for diet. in the table for food list the food items along with their protein and fat in grams. the table has to be prepared as a weekly schedule. also provide the expected amount of time in months and days. Do not put any text before or after the table, just the table itself."
 
 else:
     print("Invalid input")
