@@ -5,15 +5,13 @@ Software:
 
 Utilities:
 	GitHub
-	OpenAI : ChatGPT, API
+	https://aimlapi.com/AI/
 	YouTube
 	Python Documentation
 
 Python Modules:
 	mysql.connector
 	time
-	webbrowser
-	openai
-	customtkinter
+	STREAMLIT
 	os
 	random

@@ -154,7 +154,7 @@ pref=input("What is your body goal: Cut Or Bulk?: ")
 if pref in ["Cut","cut","CUT"]:
     weight=input("Enter your current weight: ")
     goal=input("Enter your desired weight: ")
-    ai_prompt=f"I want to increase my weight from {weight} to {goal} in a tangible time period. give me a table for diet. in the table for food list the food items along with their protein and fat in grams. the table has to be prepared as a weekly schedule. also provide the expected amount of time in months and days. Do not put any text before or after the table, just the table itself."
+    ai_prompt=f"I want to decrease my weight from {weight} to {goal} in a tangible time period. give me a table for diet. in the table for food list the food items along with their protein and fat in grams. the table has to be prepared as a weekly schedule. also provide the expected amount of time in months and days. Do not put any text before or after the table, just the table itself."
     
         
 elif pref in ["Bulk","bulk","BULK"]:
