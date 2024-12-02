@@ -1,4 +1,4 @@
-#fix calories in prompt, veg and non veg option, preferences(ability to edit table) 
+
 
 
 import mysql.connector as m
@@ -8,10 +8,10 @@ import random
 import os
 import streamlit as st
 
-API_KEY = 'd97baed0207f4336a763f45867949c39'
+API_KEY = ''
 
 def initialize_db():
-    db = m.connect(passwd="heilhitler666", host="localhost", user="root", auth_plugin="mysql_native_password")
+    db = m.connect(passwd="", host="localhost", user="root", auth_plugin="mysql_native_password")
     cursor = db.cursor()
     cursor.execute("SHOW DATABASES;")
     db_list = cursor.fetchall()

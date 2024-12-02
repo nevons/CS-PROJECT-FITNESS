@@ -1,0 +1,13 @@
+Here is a sample weekly diet plan for weight loss, aiming to reduce your weight from 70kg to 58kg in a period of 3 months (90 days). Please consult with a healthcare professional or a dietitian before starting any new diet plan.
+
+| Day        | Breakfast            | Lunch                        | Dinner                         | Snacks                               |
+|------------|----------------------|-----------------------------|-------------------------------|-------------------------------------|
+| Monday     | Poha (200 cal, 5g prot, 4g fat) + 2 boiled eggs (14g prot, 10g fat) | Rajma chawal (250 cal, 20g prot, 5g fat) | Grilled chicken breast (150 cal, 30g prot, 3g fat) + steamed veggies (100 cal, 4g prot, 2g fat) | Cucumber (30 cal, 0.5g prot, 0.1g fat) |
+| Tuesday    | Upma (200 cal, 6g prot, 4g fat) + 1 cup curd (100 cal, 4g prot, 0.5g fat) | Vegetable biryani (350 cal, 8g prot, 12g fat) | Grilled fish (120 cal, 22g prot, 2g fat) + brown rice (200 cal, 4g prot, 2g fat) | Apple (95 cal, 0.3g prot, 0.3g fat) |
+| Wednesday  | Idli (150 cal, 7g prot, 4g fat) + 1 cup sambar (100 cal, 4g prot, 2g fat) | Chole bhature (300 cal, 14g prot, 10g fat) | Tofu stir fry (200 cal, 20g prot, 10g fat) + brown rice | Carrot (20 cal, 0.2g prot, 0.2g fat) |
+| Thursday   | Dosa (250 cal, 6g prot, 7g fat) + 1 cup mixed sprouts (150 cal, 10g prot, 3g fat) | Aloo Gobi (250 cal, 6g prot, 8g fat) | Grilled chicken with mixed veggies (300 cal, 30g prot, 5g fat) | Banana (105 cal, 1.3g prot, 0.3g fat) |
+| Friday     | Oats (200 cal, 10g prot, 4g fat) + 1 cup low-fat milk (100 cal, 8g prot, 3g fat) | Palak paneer (300 cal, 18g prot, 20g fat) | Vegetable stir fry (200 cal, 6g prot, 10g fat) + brown rice | Peanuts (160 cal, 6g prot, 14g fat) |
+| Saturday   | Paratha (300 cal, 8g prot, 16g fat) + 1 cup low-fat yogurt (100 cal, 6g prot, 1g fat) | Chana masala (300 cal, 14g prot, 8g fat) | Grilled shrimp (200 cal, 34g prot, 2g fat) + brown rice | Grapes (62 cal, 0.4g prot, 0.1g fat) |
+| Sunday    | Pancake (200 cal, 6g prot, 4g fat) + 1 cup mixed berries (70 cal, 1g prot, 1g fat) | Dal-chawal (400 cal, 16g prot, 3g fat) | Grilled chicken salad (300 cal, 30g prot, 10g fat) | Walnuts (185 cal, 4.5g prot, 18g fat) |
+
+Expected weight loss: 1.2kg per week (based on a caloric deficit of 500 calories per day), which means you could reach your goal weight of 58kg in about 3 months. This is an estimate and may
